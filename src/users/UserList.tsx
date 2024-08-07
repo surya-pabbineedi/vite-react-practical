@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import useFetch from "../shared/hooks/use-fetch";
 
-import { UserContext } from "./UserContext";
-
 export interface User {
   id: number;
   name: string;
@@ -46,7 +44,6 @@ const UserList: React.FC = () => {
         <ul>
           {users.map((incomingUser: User) => (
             <div key={incomingUser.id}>
-              <div>{incomingUser.name}</div>
               {/* <UserContext.Provider> */}
 				{/* 1. display user item showing the name/email of the user */}
 
