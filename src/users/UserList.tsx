@@ -48,7 +48,6 @@ const UserList: React.FC = () => {
         <ul>
           {users.map((incomingUser: User) => (
             <div key={incomingUser.id}>
-              {incomingUser.name}
               {/* <UserContext.Provider> */}
               {/* 1. display user item showing the name/email of the user */}
 
@@ -62,6 +61,79 @@ const UserList: React.FC = () => {
           ))}
         </ul>
       )}
+
+      <p>
+        Enhance the UserList component to implement the specified
+        functionalities, ensuring that the component is robust, user-friendly,
+        and follows best practices.
+      </p>
+
+      <p>
+        <p></p>
+        1. Display User Details:
+        <ul>
+          <li>Display a list of users fetched from the API.</li>
+          <li>Each user item should show the name and email of the user.</li>
+        </ul>
+      </p>
+
+      <p>
+        2. Navigate to Posts:
+        <ul>
+          <li>
+            Implement a function to navigate to a posts route when a user item
+            is clicked.
+          </li>
+          <li>
+            The posts route should display all posts associated with the
+            selected user.
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        3. Filter Users:
+        <ul>
+          <li>
+            Implement a search functionality to filter users based on the search
+            string.
+          </li>
+          <li>
+            Ensure the search input is functional and filters the user list in
+            real-time.
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        4. Align User Details:
+        <ul>
+          <li>
+            Align user details to the left and any other attributes (like the
+            number of posts) to the right.
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        5. Cleanup Fetch Call:
+        <ul>
+          <li>
+            Ensure the fetch call is cleaned up by aborting it when the
+            component is unmounted.
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        6. Implement Search Component:
+        <ul>
+          <li>
+            Include a search component that allows users to search for specific
+            users by name or email.
+          </li>
+        </ul>
+      </p>
     </div>
   );
 };
