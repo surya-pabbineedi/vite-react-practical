@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useFetch from "../shared/hooks/use-fetch";
 
+const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 export interface User {
   id: number;
   name: string;
@@ -13,13 +14,9 @@ const UserList: React.FC = () => {
     loading,
     error,
     abortController,
-  } = useFetch("https://jsonplaceholder.typicode.com/users");
+  } = useFetch(USERS_URL);
 
-  useEffect(() => {
-    return () => {
-      abortController?.abort();
-    };
-  }, [abortController]);
+  // 5. cleanup the fetch call - abort the fetch call when the component is unmounted
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -45,13 +42,13 @@ const UserList: React.FC = () => {
           {users.map((incomingUser: User) => (
             <div key={incomingUser.id}>
               {/* <UserContext.Provider> */}
-				{/* 1. display user item showing the name/email of the user */}
+              {/* 1. display user item showing the name/email of the user */}
 
-				{/* 2. display number of posts associated the current user. 
+              {/* 2. display number of posts associated the current user. 
 					Click behavior should navigate to posts route showing all the posts associated to current user */}
-				{/* implement and use navigateToPosts method - the component should use context and communicate parent to use navigateToPosts */}
+              {/* implement and use navigateToPosts method - the component should use context and communicate parent to use navigateToPosts */}
 
-				{/* 3. user details should be aligned to left and any other attributes should align to right */}
+              {/* 3. user details should be aligned to left and any other attributes should align to right */}
               {/* </UserContext.Provider> */}
             </div>
           ))}
