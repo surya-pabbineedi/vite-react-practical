@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useFetch from "../shared/hooks/use-fetch";
+import Search from "./Serach";
 
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 export interface User {
@@ -30,17 +31,24 @@ const UserList: React.FC = () => {
     return <div>No users found</div>;
   }
 
+  const handleSearch = (searchString: string) => {
+    // 3. filter users based on search string
+  };
+
   const navigateToPosts = (userId: number) => {
     // 2. navigate to posts route
   };
 
   return (
     <div>
+      {/* 6. Search is not functional */}
+      <Search onSearch={handleSearch} />
       {/* 4. Add user search  */}
       {users.length > 0 && (
         <ul>
           {users.map((incomingUser: User) => (
             <div key={incomingUser.id}>
+              {incomingUser.name}
               {/* <UserContext.Provider> */}
               {/* 1. display user item showing the name/email of the user */}
 
